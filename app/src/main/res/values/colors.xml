@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/magenta</color>
+    <color name="colorPrimaryDark">@color/magenta_dark2</color>
+    <color name="colorAccent">@color/turquoise</color>
+
+    <!-- magenta -->
+    <color name="magenta_light1">#FFA3C2</color>
+    <color name="magenta">#FF4785</color>
+    <color name="magenta_dark1">#E9437B</color>
+    <color name="magenta_dark2">#DF385D</color>
+    <color name="magenta_dark3">#B92E4D</color>
+    <color name="magenta_dark4">#7B314A</color>
+    <color name="magenta_diagonal">#F64379</color>
+    <color name="magenta_diagonal_background">#FF4785</color>
+    <color name="magenta_background_base">#FF4785</color>
+    <color name="magenta_background_overlay">#66DF385D</color>
+
+    <!-- turquoise -->
+    <color name="turquoise_light2">#BAEEF0</color>
+    <color name="turquoise_light1">#64D2D7</color>
+    <color name="turquoise">#3EC7CE</color>
+    <color name="turquoise_transparent">#CD3EC7CE</color>
+    <color name="turquoise_dark1">#3BB6BC</color>
+    <color name="turquoise_dark2">#38A6AB</color>
+    <color name="turquoise_dark3">#2D6467</color>
+    <color name="turquoise_multi1">#00BCBC</color>
+    <color name="turquoise_diagonal">#3CBCBC</color>
+    <color name="turquoise_diagonal_background">#3EC7CE</color>
+    <color name="turquoise_background_base">#3EC7CE</color>
+    <color name="turquoise_background_overlay">#CC3AA9A6</color>
+</resources>

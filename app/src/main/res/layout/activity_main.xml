@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        app:columnCount="3"
+        app:layout_columnWeight="1"
+        tools:context="scrumpocker.kidinov.org.scrumpoker.MainActivity">
+
+        <TextView
+            android:id="@+id/card1"
+            style="@style/card"
+            android:text="1"/>
+
+        <TextView
+            android:id="@+id/card2"
+            style="@style/card"
+            android:text="2"/>
+
+        <TextView
+            android:id="@+id/card3"
+            style="@style/card"
+            android:text="3"/>
+
+        <TextView
+            android:id="@+id/card5"
+            style="@style/card"
+            android:text="5"/>
+
+        <TextView
+            android:id="@+id/card8"
+            style="@style/card"
+            android:text="8"/>
+
+        <TextView
+            android:id="@+id/card13"
+            style="@style/card"
+            android:text="13"/>
+
+        <TextView
+            android:id="@+id/card21"
+            style="@style/card"
+            android:text="21"/>
+    </android.support.v7.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/tvPickedCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:background="@drawable/ic_card_back"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="300sp"
+        android:visibility="gone"/>
+
+</RelativeLayout>
