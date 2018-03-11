@@ -26,7 +26,4 @@
     <color name="turquoise_dark3">#2D6467</color>
     <color name="turquoise_multi1">#00BCBC</color>
     <color name="turquoise_diagonal">#3CBCBC</color>
-    <color name="turquoise_diagonal_background">#3EC7CE</color>
-    <color name="turquoise_background_base">#3EC7CE</color>
-    <color name="turquoise_background_overlay">#CC3AA9A6</color>
 </resources>
