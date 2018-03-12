@@ -5,8 +5,7 @@ import android.graphics.drawable.Drawable
 
 
 class BackgroundDrawable
-constructor(private val backgroundComposition: BackgroundComposition, backgroundColorRes: Int, overlayColorRes: Int)
-    : Drawable() {
+constructor(backgroundColorRes: Int, overlayColorRes: Int) : Drawable() {
 
     private val paintBackground = Paint()
     private val paintOverlay = Paint()
@@ -47,33 +46,11 @@ constructor(private val backgroundComposition: BackgroundComposition, background
         canvas.drawRect(rectDiagonal, paintOverlay)
         canvas.restore()
 
-        when (backgroundComposition) {
-        // The bottom overlay rectangle - high version
-            BackgroundComposition.OVERLAP_HIGH -> {
-                rectBottom.bottom = bounds.bottom.toFloat()
-                rectBottom.top = bounds.bottom.toFloat() * BOTTOM_TOP_OVERLAP_HIGH_MULTIPLIER
-                rectBottom.left = bounds.left.toFloat()
-                rectBottom.right = bounds.right.toFloat()
-                canvas.drawRect(rectBottom, paintOverlay)
-            }
-        // The bottom overlay rectangle - low version
-            BackgroundComposition.OVERLAP_LOW -> {
-                rectBottom.bottom = bounds.bottom.toFloat()
-                rectBottom.top = bounds.bottom.toFloat() * BOTTOM_TOP_OVERLAP_LOW_MULTIPLIER
-                rectBottom.left = bounds.left.toFloat()
-                rectBottom.right = bounds.right.toFloat()
-                canvas.drawRect(rectBottom, paintOverlay)
-            }
-        // The bottom rectangle with no overlap
-            BackgroundComposition.NO_OVERLAP -> {
-                rectBottom.bottom = bounds.bottom.toFloat()
-                rectBottom.top = bounds.bottom.toFloat() * BOTTOM_TOP_NO_OVERLAP_MULTIPLIER
-                rectBottom.left = bounds.left.toFloat()
-                rectBottom.right = bounds.right.toFloat()
-                canvas.drawRect(rectBottom, paintOverlay)
-            }
-            BackgroundDrawable.BackgroundComposition.SINGLE -> Unit
-        }
+        rectBottom.bottom = bounds.bottom.toFloat()
+        rectBottom.top = bounds.bottom.toFloat() * BOTTOM_TOP_OVERLAP_HIGH_MULTIPLIER
+        rectBottom.left = bounds.left.toFloat()
+        rectBottom.right = bounds.right.toFloat()
+        canvas.drawRect(rectBottom, paintOverlay)
     }
 
     override fun setAlpha(alpha: Int) {
@@ -84,17 +61,8 @@ constructor(private val backgroundComposition: BackgroundComposition, background
 
     override fun getOpacity(): Int = PixelFormat.OPAQUE
 
-    enum class BackgroundComposition {
-        OVERLAP_HIGH,
-        OVERLAP_LOW,
-        SINGLE,
-        NO_OVERLAP
-    }
-
     private companion object {
         const val RIGHT_COORDINATE_MULTIPLIER = 0.44f
         const val BOTTOM_TOP_OVERLAP_HIGH_MULTIPLIER = 0.15f
-        const val BOTTOM_TOP_OVERLAP_LOW_MULTIPLIER = 0.35f
-        const val BOTTOM_TOP_NO_OVERLAP_MULTIPLIER = 0.68f
     }
 }

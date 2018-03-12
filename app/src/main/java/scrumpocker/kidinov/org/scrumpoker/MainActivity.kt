@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.DisplayMetrics
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
 import android.widget.TextView
 import com.github.florent37.viewanimator.ViewAnimator
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        rlBackground.background = BackgroundDrawable(BackgroundDrawable.BackgroundComposition.OVERLAP_HIGH,
+        rlBackground.background = BackgroundDrawable(
                 ContextCompat.getColor(this, R.color.magenta_background_base),
                 ContextCompat.getColor(this, R.color.magenta_background_overlay))
 
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
         tvPickedCard.setOnClickListener { onPickedCardClick() }
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     private fun onPickedCardClick() {
